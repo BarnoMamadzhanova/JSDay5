@@ -16,10 +16,26 @@ class animals {
     }
 }
 
+class birds extends animals {
+    constructor(species, name, breed, age, food, habitat) {
+        super(species, name, breed, age, food);
+        this.habitat = habitat;
+    }
+
+    printInfo() {
+        return `The ${this.species} feeds ${this.food} and its habitat is ${this.habitat}.`
+    }
+}
+
+
 const animal1 = new animals("dog", "Coco", "doberman", 2, ["fish", "meat"]);
 const animal2 = new animals("cat", "Sisi", "safary", 1, ["milk", "dry food"]);
 const animal3 = new animals("fish", "Yellow", "guppy", 1, ["worm", "caviar"]);
 // console.log(animalsArr);
+
+const bird1 = new birds("woodpecker", "Bubu", "grey", 1, ["insects", "beetles"], "forest");
+const bird2 = new birds("owl", "Arcane", "common", 6, ["rodents", "small fish"], ["forest", "steppe"]);
+const bird3 = new birds("penguin", "Lolo", "Imperial", 3, ["fish", "crayfish"], "seas");
 
 for(let animals of animalsArr) {
     document.getElementById('print').innerHTML +=
@@ -44,10 +60,23 @@ class person {
     }
 }
 
+class prof extends person {
+    constructor(name, age, profession, hobbys, position) {
+        super(name, age, profession, hobbys);
+        this.position = position;
+    }
+
+    printInfo() {
+        return `${super.printInfo()}. Now she is a ${this.position}.`
+    }
+}
+
 const person1 = new person("Sara", 29, "top manager", ["cooking", "backing"]);
 const person2 = new person("Maria", 38, "housekeeper", ["jogging", "dancing"]);
 const person3 = new person("Alicia", 14, "student", ["reading", "aerobics"]);
 // console.log(personsArr);
+
+
 
 for(let person of personsArr) {
     document.getElementById('person').innerHTML +=
